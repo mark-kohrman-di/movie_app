@@ -1,8 +1,0 @@
-<.header>
-  Edit Director <%= @director.id %>
-  <:subtitle>Use this form to manage director records in your database.</:subtitle>
-</.header>
-
-<.director_form changeset={@changeset} action={~p"/directors/#{@director}"} />
-
-<.back navigate={~p"/directors"}>Back to directors</.back>
