@@ -9,7 +9,6 @@ defmodule UsersApiWeb.Router do
     pipe_through :api
     get "/users", UserController, :index
     get "/users/:id", UserController, :show
-    patch "/users/:id", UserController, :edit
     post "/users", UserController, :create
     delete "/users/:id", UserController, :delete
   end

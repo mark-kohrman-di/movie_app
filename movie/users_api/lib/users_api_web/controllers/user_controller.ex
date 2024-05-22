@@ -4,7 +4,7 @@ defmodule UsersApiWeb.UserController do
   alias UsersApi.Admin
   alias UsersApi.Admin.User
 
-  # action_fallback UsersApiWeb.FallbackController
+  action_fallback UsersApiWeb.FallbackController
 
   def index(conn, _params) do
     users = Admin.list_users()
@@ -37,7 +37,7 @@ defmodule UsersApiWeb.UserController do
     user = Admin.get_user!(id)
 
     with {:ok, %User{}} <- Admin.delete_user(user) do
-      send_resp(conn, :no_content, "")
+      send_resp(conn, 200, "User deleted successfully!")
     end
   end
 end
