@@ -14,6 +14,13 @@ defmodule MovieWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", MovieWeb do
+    pipe_through :api
+    get "/searches", SearchController, :index
+    # get "/searches/:id", UserController, :show
+  end
+
+
   scope "/", MovieWeb do
     pipe_through :browser
 
